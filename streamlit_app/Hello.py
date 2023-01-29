@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(
     page_title="Hello", page_icon="👋",
@@ -22,3 +23,7 @@ st.markdown(
     I will be running a data collection task for older job descriptions.
 """
 )
+
+if st.checkbox("View System Architecture"):
+    image = Image.open('pipeline.png')
+    st.image(image, caption='System architecture', use_column_width=True)
