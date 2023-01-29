@@ -1,0 +1,33 @@
+[2023-01-29T20:10:12.744+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_2.load_data manual__2023-01-29T20:09:08.672921+00:00 [queued]>
+[2023-01-29T20:10:12.757+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_2.load_data manual__2023-01-29T20:09:08.672921+00:00 [queued]>
+[2023-01-29T20:10:12.757+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T20:10:12.757+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T20:10:12.757+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T20:10:12.785+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): load_data> on 2023-01-29 20:09:08.672921+00:00
+[2023-01-29T20:10:12.798+0000] {standard_task_runner.py:55} INFO - Started process 917 to run task
+[2023-01-29T20:10:12.810+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_2', 'load_data', 'manual__2023-01-29T20:09:08.672921+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp4wd3ftsl']
+[2023-01-29T20:10:12.814+0000] {standard_task_runner.py:83} INFO - Job 9: Subtask load_data
+[2023-01-29T20:10:12.854+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T20:10:12.926+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline_2.load_data manual__2023-01-29T20:09:08.672921+00:00 [running]> on host 84fb6dd1372f
+[2023-01-29T20:10:13.046+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline_2
+AIRFLOW_CTX_TASK_ID=load_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T20:09:08.672921+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T20:09:08.672921+00:00
+[2023-01-29T20:10:13.070+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_dag.py", line 64, in load_data
+    remote_url="http://20.224.70.229:4444", stage="load"
+TypeError: __init__() got an unexpected keyword argument 'stage'
+[2023-01-29T20:10:13.082+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_pipeline_2, task_id=load_data, execution_date=20230129T200908, start_date=20230129T201012, end_date=20230129T201013
+[2023-01-29T20:10:13.097+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 9 for task load_data (__init__() got an unexpected keyword argument 'stage'; 917)
+[2023-01-29T20:10:13.142+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-29T20:10:13.163+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

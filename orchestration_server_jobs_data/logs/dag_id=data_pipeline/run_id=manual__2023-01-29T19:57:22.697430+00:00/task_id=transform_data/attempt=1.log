@@ -1,0 +1,49 @@
+[2023-01-29T20:02:49.843+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline.transform_data manual__2023-01-29T19:57:22.697430+00:00 [queued]>
+[2023-01-29T20:02:49.876+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline.transform_data manual__2023-01-29T19:57:22.697430+00:00 [queued]>
+[2023-01-29T20:02:49.877+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T20:02:49.877+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T20:02:49.877+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T20:02:49.921+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): transform_data> on 2023-01-29 19:57:22.697430+00:00
+[2023-01-29T20:02:49.965+0000] {standard_task_runner.py:55} INFO - Started process 757 to run task
+[2023-01-29T20:02:49.984+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'transform_data', 'manual__2023-01-29T19:57:22.697430+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpfjyj2c1b']
+[2023-01-29T20:02:49.997+0000] {standard_task_runner.py:83} INFO - Job 5: Subtask transform_data
+[2023-01-29T20:02:50.059+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T20:02:50.202+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline.transform_data manual__2023-01-29T19:57:22.697430+00:00 [running]> on host 84fb6dd1372f
+[2023-01-29T20:02:50.538+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T19:57:22.697430+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T19:57:22.697430+00:00
+[2023-01-29T20:03:20.753+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_dag.py", line 46, in transform_data
+    raw_data = data_extractor.view_docs(collection_name=temp_collection_name_1)
+  File "/opt/airflow/dags/etl.py", line 212, in view_docs
+    return list(collection.find())
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/cursor.py", line 1248, in next
+    if len(self.__data) or self._refresh():
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/cursor.py", line 1139, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1740, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1685, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/topology.py", line 538, in _check_implicit_session_support
+    self._check_session_support()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/topology.py", line 555, in _check_session_support
+    readable_server_selector, self.get_server_selection_timeout(), None
+  File "/home/airflow/.local/lib/python3.7/site-packages/pymongo/topology.py", line 240, in _select_servers_loop
+    % (self._error_message(selector), timeout, self.description)
+pymongo.errors.ServerSelectionTimeoutError: mongo_db:27017: [Errno -3] Temporary failure in name resolution, Timeout: 30s, Topology Description: <TopologyDescription id: 63d6d0ea5ee7db2e9f6c363e, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -3] Temporary failure in name resolution')>]>
+[2023-01-29T20:03:20.771+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_pipeline, task_id=transform_data, execution_date=20230129T195722, start_date=20230129T200249, end_date=20230129T200320
+[2023-01-29T20:03:20.799+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 5 for task transform_data (mongo_db:27017: [Errno -3] Temporary failure in name resolution, Timeout: 30s, Topology Description: <TopologyDescription id: 63d6d0ea5ee7db2e9f6c363e, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -3] Temporary failure in name resolution')>]>; 757)
+[2023-01-29T20:03:20.825+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-29T20:03:20.873+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

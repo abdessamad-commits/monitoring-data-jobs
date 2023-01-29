@@ -10,7 +10,7 @@ import pandas as pd
 import plotly.express as px
 import requests
 
-from orchestration_server.dags.etl import ExtractTransformLoad
+from pipeline.etl import ExtractTransformLoad
 
 
 def show_pdf(file_path):
@@ -22,8 +22,10 @@ def show_pdf(file_path):
 
 st.header("Analysis of my resume")
 
-st.write("""This is the analysis of my resume. I have my resume uploaded so I can track 
-         automatically how my resume is doing compared to job descriptions. It also helps me to do a sort of A/B testing of different versions of my resume.""")
+st.write(
+    """This is the analysis of my resume. I have my resume uploaded so I can track 
+         automatically how my resume is doing compared to job descriptions. It also helps me to do a sort of A/B testing of different versions of my resume."""
+)
 
 if st.checkbox("View my resume"):
     show_pdf("/streamlit_app/pages/abdessamad_cv_french-9.pdf")
@@ -50,7 +52,7 @@ job = st.selectbox(
     "Choose a data profession",
     (
         "Data Engineer",
-        "Data Science",
+        "Data Scientist",
         "Machine Learning Engineer",
         "Data Analyst",
         "Business Analyst",

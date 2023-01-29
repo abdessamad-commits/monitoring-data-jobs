@@ -1,0 +1,24 @@
+[2023-01-29T21:21:51.969+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_1.transform_data_task_ml_engineer manual__2023-01-29T21:20:46.454488+00:00 [queued]>
+[2023-01-29T21:21:52.000+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_1.transform_data_task_ml_engineer manual__2023-01-29T21:20:46.454488+00:00 [queued]>
+[2023-01-29T21:21:52.000+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T21:21:52.001+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T21:21:52.001+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T21:21:52.051+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): transform_data_task_ml_engineer> on 2023-01-29 21:20:46.454488+00:00
+[2023-01-29T21:21:52.077+0000] {standard_task_runner.py:55} INFO - Started process 2393 to run task
+[2023-01-29T21:21:52.094+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_1', 'transform_data_task_ml_engineer', 'manual__2023-01-29T21:20:46.454488+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpehlf7zxc']
+[2023-01-29T21:21:52.104+0000] {standard_task_runner.py:83} INFO - Job 25: Subtask transform_data_task_ml_engineer
+[2023-01-29T21:21:52.170+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T21:21:52.331+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline_1.transform_data_task_ml_engineer manual__2023-01-29T21:20:46.454488+00:00 [running]> on host 84fb6dd1372f
+[2023-01-29T21:21:52.521+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline_1
+AIRFLOW_CTX_TASK_ID=transform_data_task_ml_engineer
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T21:20:46.454488+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T21:20:46.454488+00:00
+[2023-01-29T21:21:52.642+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-29T21:21:52.659+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=data_pipeline_1, task_id=transform_data_task_ml_engineer, execution_date=20230129T212046, start_date=20230129T212151, end_date=20230129T212152
+[2023-01-29T21:21:52.701+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-01-29T21:21:52.743+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -11,7 +11,7 @@ import pymongo
 import streamlit as st
 
 sys.path.append(os.path.abspath(".."))
-from orchestration_server.dags.etl import ExtractTransformLoad
+from pipeline.etl import ExtractTransformLoad
 
 # from wordcloud import WordCloud
 # import matplotlib.pyplot as plt
@@ -32,7 +32,7 @@ with tab1:
         "What is the position you are interested in?",
         (
             "Data Engineer",
-            "Data Science",
+            "Data Scientist",
             "Data Analyst",
             "Business Analyst",
             "Machine Learning Engineer",
@@ -92,7 +92,7 @@ with tab2:
         "What is the position you are interested in?",
         (
             "Data Engineer",
-            "Data Science",
+            "Data Scientist",
             "Data Analyst",
             "Business Analyst",
             "Machine Learning Engineer",

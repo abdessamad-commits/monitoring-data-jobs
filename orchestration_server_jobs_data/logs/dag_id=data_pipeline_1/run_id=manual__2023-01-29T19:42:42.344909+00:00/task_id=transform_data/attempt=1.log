@@ -1,0 +1,49 @@
+[2023-01-29T19:43:15.169+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_1.transform_data manual__2023-01-29T19:42:42.344909+00:00 [queued]>
+[2023-01-29T19:43:15.193+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_1.transform_data manual__2023-01-29T19:42:42.344909+00:00 [queued]>
+[2023-01-29T19:43:15.193+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T19:43:15.194+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T19:43:15.194+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T19:43:15.255+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): transform_data> on 2023-01-29 19:42:42.344909+00:00
+[2023-01-29T19:43:15.278+0000] {standard_task_runner.py:55} INFO - Started process 255 to run task
+[2023-01-29T19:43:15.301+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_1', 'transform_data', 'manual__2023-01-29T19:42:42.344909+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp7svtdjy5']
+[2023-01-29T19:43:15.309+0000] {standard_task_runner.py:83} INFO - Job 3: Subtask transform_data
+[2023-01-29T19:43:15.355+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T19:43:15.475+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline_1.transform_data manual__2023-01-29T19:42:42.344909+00:00 [running]> on host 84fb6dd1372f
+[2023-01-29T19:43:15.625+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline_1
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T19:42:42.344909+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T19:42:42.344909+00:00
+[2023-01-29T19:43:15.647+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_dag.py", line 44, in transform_data
+    data_extractor = ExtractTransformLoad()
+  File "/opt/airflow/dags/etl.py", line 35, in __init__
+    self.webdriver = webdriver.Chrome(path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 89, in __init__
+    keep_alive,
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 101, in __init__
+    self.service.start()
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    self._start_process(self.path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 202, in _start_process
+    creationflags=self.creation_flags,
+  File "/usr/local/lib/python3.7/subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "/usr/local/lib/python3.7/subprocess.py", line 1465, in _execute_child
+    executable = os.fsencode(executable)
+  File "/usr/local/lib/python3.7/os.py", line 812, in fsencode
+    filename = fspath(filename)  # Does type-checking of `filename`.
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-01-29T19:43:15.662+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_pipeline_1, task_id=transform_data, execution_date=20230129T194242, start_date=20230129T194315, end_date=20230129T194315
+[2023-01-29T19:43:15.681+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 3 for task transform_data (expected str, bytes or os.PathLike object, not NoneType; 255)
+[2023-01-29T19:43:15.727+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-29T19:43:15.761+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

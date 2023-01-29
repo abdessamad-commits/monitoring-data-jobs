@@ -12,7 +12,7 @@ import pandas as pd
 import plotly.express as px
 import requests
 
-from orchestration_server.dags.etl import ExtractTransformLoad
+from pipeline.etl import ExtractTransformLoad
 
 
 def show_pdf(pdf_data):
@@ -23,39 +23,41 @@ def show_pdf(pdf_data):
 
 st.header("Analyze your resume")
 
-st.write("""
+st.write(
+    """
          Once you have uploaded your resume, you can choose a data profession and compare your resume with job descriptions.
          Your resume will be compared with job descriptions stored in a database using TF-IDF and cosine similarity and the results will be displayed as a box plot and a histogram.
          The database contains job descriptions for the following data professions:
             - Data Engineer
-            - Data Science
+            - Data Scientist
             - Machine Learning Engineer
             - Data Analyst
             - Business Analyst.\n
         Data is collected every day from Indeed automatically by airflow, for now only job descriptions from France are stored in the database.   
-         """)
+         """
+)
 
 uploaded_file = st.file_uploader("Upload your resume (PDF only)", type="pdf")
 
 job = st.selectbox(
-        "Choose a data profession",
-        (
-            "Data Engineer",
-            "Data Science",
-            "Machine Learning Engineer",
-            "Data Analyst",
-            "Business Analyst",
-        ),
-    )
+    "Choose a data profession",
+    (
+        "Data Engineer",
+        "Data Scientist",
+        "Machine Learning Engineer",
+        "Data Analyst",
+        "Business Analyst",
+    ),
+)
 
 if uploaded_file is not None:
     pdf_data = uploaded_file.getbuffer()
-    
+
     if st.checkbox("View your resume"):
         show_pdf(pdf_data)
 
     if st.button("Analyze your resume"):
-        
+
         headers = {
             "accept": "application/json",
             # requests won't add a boundary if this header is set when you pass files=

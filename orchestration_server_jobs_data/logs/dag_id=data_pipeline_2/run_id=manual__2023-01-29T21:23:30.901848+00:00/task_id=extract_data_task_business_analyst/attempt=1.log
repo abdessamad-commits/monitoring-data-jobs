@@ -1,0 +1,28 @@
+[2023-01-29T21:23:53.431+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_2.extract_data_task_business_analyst manual__2023-01-29T21:23:30.901848+00:00 [queued]>
+[2023-01-29T21:23:53.448+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline_2.extract_data_task_business_analyst manual__2023-01-29T21:23:30.901848+00:00 [queued]>
+[2023-01-29T21:23:53.448+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T21:23:53.449+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T21:23:53.449+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T21:23:53.480+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): extract_data_task_business_analyst> on 2023-01-29 21:23:30.901848+00:00
+[2023-01-29T21:23:53.504+0000] {standard_task_runner.py:55} INFO - Started process 2444 to run task
+[2023-01-29T21:23:53.526+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_2', 'extract_data_task_business_analyst', 'manual__2023-01-29T21:23:30.901848+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp76qli4ln']
+[2023-01-29T21:23:53.539+0000] {standard_task_runner.py:83} INFO - Job 30: Subtask extract_data_task_business_analyst
+[2023-01-29T21:23:53.594+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T21:23:53.709+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline_2.extract_data_task_business_analyst manual__2023-01-29T21:23:30.901848+00:00 [running]> on host 84fb6dd1372f
+[2023-01-29T21:23:53.884+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline_2
+AIRFLOW_CTX_TASK_ID=extract_data_task_business_analyst
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T21:23:30.901848+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T21:23:30.901848+00:00
+[2023-01-29T21:24:30.234+0000] {etl.py:120} ERROR - Error
+[2023-01-29T21:24:30.326+0000] {etl.py:120} ERROR - Error
+[2023-01-29T21:24:30.414+0000] {etl.py:120} ERROR - Error
+[2023-01-29T21:24:30.516+0000] {etl.py:120} ERROR - Error
+[2023-01-29T21:24:32.250+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-29T21:24:32.306+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=data_pipeline_2, task_id=extract_data_task_business_analyst, execution_date=20230129T212330, start_date=20230129T212353, end_date=20230129T212432
+[2023-01-29T21:24:32.492+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-01-29T21:24:32.677+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check
