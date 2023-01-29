@@ -1,0 +1,24 @@
+[2023-01-24T15:41:31.780+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: etl_pipeline.load_data manual__2023-01-24T15:41:00.207534+00:00 [queued]>
+[2023-01-24T15:41:31.793+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: etl_pipeline.load_data manual__2023-01-24T15:41:00.207534+00:00 [queued]>
+[2023-01-24T15:41:31.793+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-24T15:41:31.793+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-24T15:41:31.793+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-24T15:41:31.811+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): load_data> on 2023-01-24 15:41:00.207534+00:00
+[2023-01-24T15:41:31.817+0000] {standard_task_runner.py:55} INFO - Started process 1035 to run task
+[2023-01-24T15:41:31.823+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'load_data', 'manual__2023-01-24T15:41:00.207534+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpxy8ast45']
+[2023-01-24T15:41:31.825+0000] {standard_task_runner.py:83} INFO - Job 33: Subtask load_data
+[2023-01-24T15:41:31.849+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-24T15:41:31.914+0000] {task_command.py:388} INFO - Running <TaskInstance: etl_pipeline.load_data manual__2023-01-24T15:41:00.207534+00:00 [running]> on host b054b8922d61
+[2023-01-24T15:41:31.995+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=etl_pipeline
+AIRFLOW_CTX_TASK_ID=load_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-24T15:41:00.207534+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-24T15:41:00.207534+00:00
+[2023-01-24T15:41:32.191+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-24T15:41:32.213+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=load_data, execution_date=20230124T154100, start_date=20230124T154131, end_date=20230124T154132
+[2023-01-24T15:41:32.276+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-01-24T15:41:32.307+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,33 @@
+[2023-01-23T15:27:33.013+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_9.load_data manual__2023-01-23T15:27:30.624588+00:00 [queued]>
+[2023-01-23T15:27:33.020+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_9.load_data manual__2023-01-23T15:27:30.624588+00:00 [queued]>
+[2023-01-23T15:27:33.021+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T15:27:33.022+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-01-23T15:27:33.022+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T15:27:33.031+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): load_data> on 2023-01-23 15:27:30.624588+00:00
+[2023-01-23T15:27:33.036+0000] {standard_task_runner.py:55} INFO - Started process 3410 to run task
+[2023-01-23T15:27:33.038+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_extraction_and_loading_9', 'load_data', 'manual__2023-01-23T15:27:30.624588+00:00', '--job-id', '134', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmppr6k4efi']
+[2023-01-23T15:27:33.041+0000] {standard_task_runner.py:83} INFO - Job 134: Subtask load_data
+[2023-01-23T15:27:33.051+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-23T15:27:33.095+0000] {task_command.py:388} INFO - Running <TaskInstance: data_extraction_and_loading_9.load_data manual__2023-01-23T15:27:30.624588+00:00 [running]> on host 1b696c32fad4
+[2023-01-23T15:27:33.173+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_extraction_and_loading_9
+AIRFLOW_CTX_TASK_ID=load_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-23T15:27:30.624588+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-23T15:27:30.624588+00:00
+[2023-01-23T15:27:33.215+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipeline.py", line 33, in load_data
+    data_extractor = pickle.loads(pickled_data_extractor)
+TypeError: a bytes-like object is required, not 'NoneType'
+[2023-01-23T15:27:33.237+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_extraction_and_loading_9, task_id=load_data, execution_date=20230123T152730, start_date=20230123T152733, end_date=20230123T152733
+[2023-01-23T15:27:33.251+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 134 for task load_data (a bytes-like object is required, not 'NoneType'; 3410)
+[2023-01-23T15:27:33.291+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-23T15:27:33.308+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

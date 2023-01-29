@@ -1,0 +1,11 @@
+streamlit==1.16.0
+numpy
+pandas 
+plotly 
+scipy
+altair
+statsmodels
+pymongo
+selenium
+spacy
+matplotlib

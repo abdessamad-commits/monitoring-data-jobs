@@ -1,0 +1,50 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  streamlit_app:
+    build: streamlit_app/
+    restart: always
+    ports:
+      - 8502:8501
+    volumes:
+      - ./streamlit_app:/streamlit_app
+      - ./pipeline:/pipeline
+    depends_on:
+      - mongo_db
+      
+  mongo_db:
+    image: mongo:4.2.12
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: abdessamad
+      MONGO_INITDB_ROOT_PASSWORD: abdessamad
+    ports:
+      - 27017:27017
+    volumes: 
+      - ./data:/data/db
+      
+  resume_analysis_server:
+    build: resume_analysis_server/
+    restart: always
+    ports:
+      - 4200:4200
+    volumes:
+      - ./resume_analysis_server:/resume_analysis_server
+      - ./pipeline:/pipeline
+    depends_on:
+      - mongo_db
+
+  mongo_express:
+    image: mongo-express:latest
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo_db
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=abdessamad
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=abdessamad
+      - ME_CONFIG_MONGODB_URL=mongodb://abdessamad:abdessamad@mongo_db:27017/
+    ports:
+      - "8081:8081"
+    restart: always
+    depends_on:
+      - mongo_db

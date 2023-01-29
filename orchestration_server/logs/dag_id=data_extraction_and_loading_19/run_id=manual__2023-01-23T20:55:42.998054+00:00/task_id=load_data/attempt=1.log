@@ -1,0 +1,34 @@
+[2023-01-23T20:56:22.777+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_19.load_data manual__2023-01-23T20:55:42.998054+00:00 [queued]>
+[2023-01-23T20:56:22.785+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_19.load_data manual__2023-01-23T20:55:42.998054+00:00 [queued]>
+[2023-01-23T20:56:22.786+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T20:56:22.787+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-23T20:56:22.788+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T20:56:22.796+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): load_data> on 2023-01-23 20:55:42.998054+00:00
+[2023-01-23T20:56:22.806+0000] {standard_task_runner.py:55} INFO - Started process 12838 to run task
+[2023-01-23T20:56:22.810+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_extraction_and_loading_19', 'load_data', 'manual__2023-01-23T20:55:42.998054+00:00', '--job-id', '154', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpme63vcm7']
+[2023-01-23T20:56:22.812+0000] {standard_task_runner.py:83} INFO - Job 154: Subtask load_data
+[2023-01-23T20:56:22.825+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-23T20:56:22.866+0000] {task_command.py:388} INFO - Running <TaskInstance: data_extraction_and_loading_19.load_data manual__2023-01-23T20:55:42.998054+00:00 [running]> on host 1b696c32fad4
+[2023-01-23T20:56:22.919+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_extraction_and_loading_19
+AIRFLOW_CTX_TASK_ID=load_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-23T20:55:42.998054+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-23T20:55:42.998054+00:00
+[2023-01-23T20:56:22.928+0000] {logging_mixin.py:137} INFO - this is the data:  b316953b-f9a5-4727-a629-ce935eca561c
+[2023-01-23T20:56:22.937+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipeline.py", line 32, in load_data
+    raw_data = data_extractor.get_data_from_mongo(collection_name=temp_collection_name)
+AttributeError: 'ExtractTransformLoad' object has no attribute 'get_data_from_mongo'
+[2023-01-23T20:56:22.948+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_extraction_and_loading_19, task_id=load_data, execution_date=20230123T205542, start_date=20230123T205622, end_date=20230123T205622
+[2023-01-23T20:56:22.957+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 154 for task load_data ('ExtractTransformLoad' object has no attribute 'get_data_from_mongo'; 12838)
+[2023-01-23T20:56:22.983+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-23T20:56:22.996+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

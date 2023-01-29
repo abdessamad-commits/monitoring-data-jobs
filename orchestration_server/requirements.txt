@@ -1,0 +1,9 @@
+pymongo
+selenium
+plotly
+spacy
+numpy
+pandas 
+altair
+pymongo
+spacy

@@ -1,0 +1,55 @@
+[2023-01-23T14:28:14.967+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_2.extract_data scheduled__2022-01-26T00:00:00+00:00 [queued]>
+[2023-01-23T14:28:15.071+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_2.extract_data scheduled__2022-01-26T00:00:00+00:00 [queued]>
+[2023-01-23T14:28:15.078+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T14:28:15.082+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-01-23T14:28:15.093+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T14:28:15.200+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): extract_data> on 2022-01-26 00:00:00+00:00
+[2023-01-23T14:28:15.249+0000] {standard_task_runner.py:55} INFO - Started process 1413 to run task
+[2023-01-23T14:28:15.400+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_extraction_and_loading_2', 'extract_data', 'scheduled__2022-01-26T00:00:00+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpx9jhyz7o']
+[2023-01-23T14:28:15.421+0000] {standard_task_runner.py:83} INFO - Job 55: Subtask extract_data
+[2023-01-23T14:28:15.561+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-23T14:28:15.795+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-23T14:28:16.090+0000] {task_command.py:388} INFO - Running <TaskInstance: data_extraction_and_loading_2.extract_data scheduled__2022-01-26T00:00:00+00:00 [running]> on host 1b696c32fad4
+[2023-01-23T14:28:16.822+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_extraction_and_loading_2
+AIRFLOW_CTX_TASK_ID=extract_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-26T00:00:00+00:00
+[2023-01-23T14:28:16.865+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipeline.py", line 9, in extract_data
+    data_extractor = DataExtractor(remote_url="http://20.224.70.229:8501:4444")
+  File "/opt/airflow/dags/helpers.py", line 27, in __init__
+    self.webdriver = webdriver.Remote(command_executor=remote_url, options=options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 286, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 378, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 438, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 290, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 311, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/poolmanager.py", line 362, in urlopen
+    u = parse_url(url)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/url.py", line 397, in parse_url
+    return six.raise_from(LocationParseError(source_url), None)
+  File "<string>", line 3, in raise_from
+urllib3.exceptions.LocationParseError: Failed to parse: http://20.224.70.229:8501:4444/session
+[2023-01-23T14:28:17.042+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=data_extraction_and_loading_2, task_id=extract_data, execution_date=20220126T000000, start_date=20230123T142815, end_date=20230123T142816
+[2023-01-23T14:28:17.891+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 55 for task extract_data (Failed to parse: http://20.224.70.229:8501:4444/session; 1413)
+[2023-01-23T14:28:18.141+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-23T14:28:19.165+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

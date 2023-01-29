@@ -1,0 +1,25 @@
+[2023-01-23T21:41:26.074+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_21.transform_data manual__2023-01-23T21:40:39.934827+00:00 [queued]>
+[2023-01-23T21:41:26.081+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_extraction_and_loading_21.transform_data manual__2023-01-23T21:40:39.934827+00:00 [queued]>
+[2023-01-23T21:41:26.082+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T21:41:26.085+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-23T21:41:26.086+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-23T21:41:26.095+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): transform_data> on 2023-01-23 21:40:39.934827+00:00
+[2023-01-23T21:41:26.101+0000] {standard_task_runner.py:55} INFO - Started process 14228 to run task
+[2023-01-23T21:41:26.104+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_extraction_and_loading_21', 'transform_data', 'manual__2023-01-23T21:40:39.934827+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpzf9eoqak']
+[2023-01-23T21:41:26.107+0000] {standard_task_runner.py:83} INFO - Job 159: Subtask transform_data
+[2023-01-23T21:41:26.119+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-23T21:41:26.166+0000] {task_command.py:388} INFO - Running <TaskInstance: data_extraction_and_loading_21.transform_data manual__2023-01-23T21:40:39.934827+00:00 [running]> on host 1b696c32fad4
+[2023-01-23T21:41:26.218+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_extraction_and_loading_21
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-23T21:40:39.934827+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-23T21:40:39.934827+00:00
+[2023-01-23T21:41:26.226+0000] {logging_mixin.py:137} INFO - this is the data:  {'collection_name_1': '573faae5-b743-44c9-97c8-01784b0ea67c', 'collection_name_2': '4b5710cb-5338-4206-972a-ae3c8e349404'}
+[2023-01-23T21:41:27.977+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-23T21:41:28.012+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=data_extraction_and_loading_21, task_id=transform_data, execution_date=20230123T214039, start_date=20230123T214126, end_date=20230123T214128
+[2023-01-23T21:41:28.092+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-01-23T21:41:28.132+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

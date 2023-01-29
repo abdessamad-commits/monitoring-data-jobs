@@ -1,0 +1,39 @@
+[2023-01-29T15:31:33.890+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline.extract_data manual__2023-01-29T15:31:27.853762+00:00 [queued]>
+[2023-01-29T15:31:33.897+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: data_pipeline.extract_data manual__2023-01-29T15:31:27.853762+00:00 [queued]>
+[2023-01-29T15:31:33.899+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T15:31:33.899+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-01-29T15:31:33.900+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T15:31:33.909+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): extract_data> on 2023-01-29 15:31:27.853762+00:00
+[2023-01-29T15:31:33.935+0000] {standard_task_runner.py:55} INFO - Started process 899 to run task
+[2023-01-29T15:31:33.939+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'extract_data', 'manual__2023-01-29T15:31:27.853762+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpdi_nj6k1']
+[2023-01-29T15:31:33.944+0000] {standard_task_runner.py:83} INFO - Job 93: Subtask extract_data
+[2023-01-29T15:31:33.961+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-01-29T15:31:34.003+0000] {task_command.py:388} INFO - Running <TaskInstance: data_pipeline.extract_data manual__2023-01-29T15:31:27.853762+00:00 [running]> on host e0a1e7e3563d
+[2023-01-29T15:31:34.059+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=abdessamad
+AIRFLOW_CTX_DAG_ID=data_pipeline
+AIRFLOW_CTX_TASK_ID=extract_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T15:31:27.853762+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T15:31:27.853762+00:00
+[2023-01-29T15:31:58.652+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:31:58.717+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:31:58.775+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:31:58.834+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:31:58.931+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:31:59.051+0000] {etl.py:120} ERROR - Error
+[2023-01-29T15:32:29.277+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:32:59.716+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:33:30.089+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:34:00.455+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:34:30.814+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:35:01.149+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:35:31.532+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:36:01.928+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:36:32.300+0000] {logging_mixin.py:137} INFO - mongo_db:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 63d69156e86ee83620027031, topology_type: Unknown, servers: [<ServerDescription ('mongo_db', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongo_db:27017: [Errno -2] Name or service not known')>]>
+[2023-01-29T15:36:32.542+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-29T15:36:32.554+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=data_pipeline, task_id=extract_data, execution_date=20230129T153127, start_date=20230129T153133, end_date=20230129T153632
+[2023-01-29T15:36:32.607+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-01-29T15:36:32.638+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check
